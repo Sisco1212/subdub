@@ -15,7 +15,7 @@ const subscriptionSchema = mongoose.Schema({
     },
     currency: {
         type: String,
-        emun: ["USD", "NGN", "EUR", "GBP"],
+        enum: ["USD", "NGN", "EUR", "GBP"],
         default: "USD",
     },
     frequency: {
@@ -55,7 +55,7 @@ const subscriptionSchema = mongoose.Schema({
         }
     },
     user: {
-        id: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User', 
         required: true,
         index: true,
@@ -63,7 +63,7 @@ const subscriptionSchema = mongoose.Schema({
 
 }, {timestamps: true});
 
-subscriptionSchema.pre('save', function(next) {
+subscriptionSchema.pre('save', function() {
     if(!this.renewalDate) {
         const renewalPeriods = {
             daily: 1,
@@ -79,7 +79,6 @@ subscriptionSchema.pre('save', function(next) {
         this.status = 'expired';
     }
 
-    next();
 });
 
 const Subscription = mongoose.model("Subscription", subscriptionSchema);
