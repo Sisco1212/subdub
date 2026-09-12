@@ -13,7 +13,7 @@ export const generateEmailTemplate = ({
     <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <tr>
             <td style="background-color: #4a90e2; text-align: center;">
-                <p style="font-size: 54px; line-height: 54px; font-weight: 800;">SubDub</p>
+                <p style="font-size: 54px; line-height: 54px; font-weight: 800;">Subverse</p>
             </td>
         </tr>
         <tr>
