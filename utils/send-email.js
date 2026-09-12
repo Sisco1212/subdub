@@ -24,7 +24,7 @@ export const sendReminderEmail = async({ to, type, subscription }) => {
     const mailOptions = {
         from: accountEmail,
         to: to,
-        subject, subject,
+        subject,
         html: message,
     }
 
